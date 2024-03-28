@@ -1,20 +1,20 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import BuyBtn from "../ButBtn/BuyBtn.jsx";
 import SelBtn from "../SelBtn/SelBtn.jsx";
-import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
   const navigate = useNavigate();
-  // const userData = JSON.parse(localStorage.getItem('email'));
-  // const userBalance= JSON.parse(localStorage.getItem('balance'));
   const userData = JSON.parse(localStorage.getItem("userData"));
   let userBalance = userData.balance;
   let userId = userData.email;
+
   const onLogout = () => {
     localStorage.clear();
     alert("Logout Successfully");
     navigate("/login");
   };
+
   return (
     <>
       <div className="w-full bg-[#1d2634]">
@@ -24,7 +24,7 @@ function Sidebar() {
         </div>
 
         <ul className="w-full flex flex-col  items-center justify-center ">
-          <a href="/dashboard" className="w-full">
+          <Link to="/dashboard" className="w-full">
             <li className="flex items-center text-white p-6 pl-8 hover:bg-black w-full  gap-2">
               <lord-icon
                 src="https://cdn.lordicon.com/wmwqvixz.json"
@@ -34,8 +34,8 @@ function Sidebar() {
               ></lord-icon>
               Dashboard
             </li>
-          </a>
-          <a href="/transactions" className="w-full">
+          </Link>
+          <Link to="/transactions" className="w-full">
             <li className="flex items-center text-white p-6 pl-8 hover:bg-black w-full flex gap-2">
               <lord-icon
                 src="https://cdn.lordicon.com/vuiggmtc.json"
@@ -45,8 +45,8 @@ function Sidebar() {
               ></lord-icon>
               Transactions
             </li>
-          </a>
-          <a href="/profile" className="w-full">
+          </Link>
+          <Link to="/profile" className="w-full">
             <li className="flex items-center text-white p-6 pl-8 hover:bg-black w-full flex gap-2">
               <lord-icon
                 src="https://cdn.lordicon.com/kthelypq.json"
@@ -56,7 +56,7 @@ function Sidebar() {
               ></lord-icon>
               Profile
             </li>
-          </a>
+          </Link>
           <div className="flex  items-center text-white  pl-8 w-full">
             <button
               className="bg-red-500    w-20 rounded-xl text-black text-center"
