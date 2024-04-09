@@ -38,7 +38,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard name={"Home"} />} />
           <Route path="/transactions" element={<Transactions />} />
-          <Route path="/AdminDashboard" element={<AdminDashboard />} />
+          <Route path="AdminDashboard" element={<AdminDashboard />} />
           <Route path="/Buy" element={<BuyBtn />} />
           <Route
             path="/admintransactionmanagement"
