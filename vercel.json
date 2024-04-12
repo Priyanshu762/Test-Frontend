@@ -1,12 +1,7 @@
 {
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/"
-    },
-    {
-      "src": "/test",
-      "dest": "/"
-    }
-  ]
-}
+    "version": 2,
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/index.html" }
+    ]
+  }
+  
